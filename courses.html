@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="الدورات والفعاليات - مبادرة بصمة دعم">
+    <title>الدورات والفعاليات | بصمة دعم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        .courses-hero {
+            background: linear-gradient(135deg, #0066CC, #004488);
+            color: white;
+            padding: 140px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .courses-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -40%;
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
+            animation: pulse 20s infinite ease-in-out;
+        }
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .course-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,102,204,0.12);
+            transition: all 0.4s;
+        }
+        .course-card:hover {
+            transform: translateY(-15px);
+        }
+        .course-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .upcoming { background: #10B981; color: white; }
+        .ended { background: #EF4444; color: white; }
+        .course-info {
+            padding: 22px;
+        }
+        .course-date {
+            color: #F4A261;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .course-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1A2A44;
+        }
+        .register-btn {
+            width: 100%;
+            margin-top: 15px;
+            background: linear-gradient(135deg, #F4A261, #f0c14b);
+            color: #004488;
+            padding: 14px;
+            border-radius: 50px;
+            text-align: center;
+            font-weight: 700;
+            text-decoration: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                </svg>
+                <h1>بصمة دعم</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن المبادرة</a></li>
+                <li><a href="news.html">أهم الأخبار</a></li>
+                <li><a href="structure.html">الهيكل التنظيمي</a></li>
+                <li><a href="rules.html">اللائحة الداخلية</a></li>
+                <li><a href="join.html">انضم الآن</a></li>
+                <li><a href="achievements.html">الإنجازات</a></li>
+                <li><a href="partners.html">شركاء النجاح</a></li>
+                <li><a href="ambassadors.html">سفراء بصمة دعم</a></li>
+                <li><a href="courses.html" class="active">الدورات والفعاليات</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" onclick="showLoginModal()" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                </a>
+            </div>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="courses-hero">
+        <div class="container">
+            <h1>الدورات والفعاليات</h1>
+            <p>تعلم • تطور • كن جزء من التغيير</p>
+        </div>
+    </section>
+
+    <!-- الدورات والفعاليات -->
+    <div class="courses-grid container">
+        <!-- فعالية قادمة 1 -->
+        <div class="course-card">
+            <div style="position:relative;">
+                <img src="https://picsum.photos/id/1015/800/500" alt="">
+                <span class="course-badge upcoming">قادمة</span>
+            </div>
+            <div class="course-info">
+                <div class="course-date">١٥ أبريل ٢٠٢٦ • ٦ مساءً • القاهرة</div>
+                <div class="course-title">ورشة "ريادة الأعمال والتسويق الرقمي"</div>
+                <p style="color:#475569; line-height:1.6;">مدة الورشة ٤ ساعات • بالتعاون مع بنك مصر • ٥٠ مقعد فقط</p>
+                <a href="#" onclick="alert('سيتم توجيهك لصفحة التسجيل قريباً!')" class="register-btn">سجل الآن</a>
+            </div>
+        </div>
+
+        <!-- فعالية قادمة 2 -->
+        <div class="course-card">
+            <div style="position:relative;">
+                <img src="https://picsum.photos/id/237/800/500" alt="">
+                <span class="course-badge upcoming">قادمة</span>
+            </div>
+            <div class="course-info">
+                <div class="course-date">٢٢ أبريل ٢٠٢٦ • الإسكندرية</div>
+                <div class="course-title">دورة "مهارات القيادة الشبابية"</div>
+                <p style="color:#475569; line-height:1.6;">٣ أيام تدريبية مكثفة • شهادة معتمدة</p>
+                <a href="#" onclick="alert('سيتم توجيهك لصفحة التسجيل قريباً!')" class="register-btn">سجل الآن</a>
+            </div>
+        </div>
+
+        <!-- فعالية منتهية 1 -->
+        <div class="course-card">
+            <div style="position:relative;">
+                <img src="https://picsum.photos/id/180/800/500" alt="">
+                <span class="course-badge ended">منتهية</span>
+            </div>
+            <div class="course-info">
+                <div class="course-date">٣٠ مارس ٢٠٢٦ • الجيزة</div>
+                <div class="course-title">معرض الإبداع الشبابي</div>
+                <p style="color:#475569; line-height:1.6;">١٢٠ مشروع تم عرضه • أكثر من ٨٠٠٠ زائر</p>
+                <a href="#" class="register-btn" style="background:#64748B; color:white; pointer-events:none;">انتهت الفعالية</a>
+            </div>
+        </div>
+
+        <!-- فعالية منتهية 2 -->
+        <div class="course-card">
+            <div style="position:relative;">
+                <img src="https://picsum.photos/id/251/800/500" alt="">
+                <span class="course-badge ended">منتهية</span>
+            </div>
+            <div class="course-info">
+                <div class="course-date">١٨ مارس ٢٠٢٦ • المنصورة</div>
+                <div class="course-title">حملة بصمة بيئية</div>
+                <p style="color:#475569; line-height:1.6;">٦٥٠ متطوع • تنظيف ١٢ منطقة ساحلية</p>
+                <a href="#" class="register-btn" style="background:#64748B; color:white; pointer-events:none;">انتهت الفعالية</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-footer">
+                        <svg width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                        </svg>
+                        <h3>بصمة دعم</h3>
+                    </div>
+                    <p>نترك بصمة في كل شاب وشابة</p>
+                </div>
+                <div>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html">عن المبادرة</a></li>
+                        <li><a href="join.html">انضم الآن</a></li>
+                        <li><a href="news.html">الأخبار</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@basmatda3m.org</li>
+                        <li><i class="fab fa-whatsapp"></i> 0155 123 4567</li>
+                        <li><i class="fab fa-instagram"></i> @basmatda3m</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تابعنا</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p>© 2026 مبادرة بصمة دعم - كل الحقوق محفوظة</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>تسجيل الدخول</h3>
+            <input type="email" id="loginEmail" placeholder="البريد الإلكتروني">
+            <input type="password" id="loginPass" placeholder="كلمة المرور">
+            <button onclick="fakeLogin()">دخول</button>
+            <p onclick="hideLoginModal()" style="cursor:pointer; color:#0066CC; margin-top:15px;">إغلاق</p>
+        </div>
+    </div>
+
+    <script>
+        function showLoginModal() { document.getElementById('loginModal').style.display = 'flex'; }
+        function hideLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
+        function fakeLogin() { alert('تم تسجيل الدخول بنجاح (تجريبي)'); hideLoginModal(); }
+        function toggleMobileMenu() { document.querySelector('.nav-menu').classList.toggle('mobile-active'); }
+
+        window.addEventListener('load', () => {
+            console.log('%c✅ صفحة الدورات والفعاليات جاهزة!', 'color:#F4A261; font-size:20px; font-weight:bold');
+        });
+    </script>
+</body>
+</html>

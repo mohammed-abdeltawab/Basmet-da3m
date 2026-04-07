@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="اللائحة الداخلية لمبادرة بصمة دعم">
+    <title>اللائحة الداخلية | بصمة دعم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        .rules-hero {
+            background: linear-gradient(135deg, #0066CC, #004488);
+            color: white;
+            padding: 140px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .rules-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -40%;
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
+            animation: pulse 20s infinite ease-in-out;
+        }
+        .rules-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .rules-box {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(0,102,204,0.12);
+            padding: 50px 40px;
+            font-size: 18.5px;
+            line-height: 1.9;
+        }
+        .rules-box ol {
+            counter-reset: rule-counter;
+        }
+        .rules-box li {
+            counter-increment: rule-counter;
+            margin-bottom: 28px;
+            padding-right: 40px;
+            position: relative;
+        }
+        .rules-box li::before {
+            content: counter(rule-counter);
+            position: absolute;
+            right: 0;
+            background: #F4A261;
+            color: #004488;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 19px;
+        }
+        .last-update {
+            text-align: center;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: #F4A261;
+            color: #004488;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                </svg>
+                <h1>بصمة دعم</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن المبادرة</a></li>
+                <li><a href="news.html">أهم الأخبار</a></li>
+                <li><a href="structure.html">الهيكل التنظيمي</a></li>
+                <li><a href="rules.html" class="active">اللائحة الداخلية</a></li>
+                <li><a href="join.html">انضم الآن</a></li>
+                <li><a href="achievements.html">الإنجازات</a></li>
+                <li><a href="partners.html">شركاء النجاح</a></li>
+                <li><a href="ambassadors.html">سفراء بصمة دعم</a></li>
+                <li><a href="courses.html">الدورات والفعاليات</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" onclick="showLoginModal()" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                </a>
+            </div>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero مع زرار التحميل -->
+    <section class="rules-hero">
+        <div class="container">
+            <h1>اللائحة الداخلية</h1>
+            <p>قواعد واضحة.. عشان نعمل معاً بثقة واحترام</p>
+            
+            <!-- الزرار الجديد -->
+            <a href="YOUR_GOOGLE_DRIVE_LINK" 
+               target="_blank"
+               class="btn-primary btn-large" 
+               style="margin-top: 35px; display: inline-flex; align-items: center; gap: 12px; font-size: 22px;">
+                <i class="fas fa-download"></i>
+                تحميل اللائحة
+            </a>
+        </div>
+    </section>
+
+    <div class="rules-container">
+        <div class="rules-box">
+            <h2 style="text-align:center; margin-bottom:40px; color:#1A2A44;">اللائحة الداخلية لمبادرة بصمة دعم</h2>
+            
+            <ol>
+                <li>الالتزام التام بالقيم الأساسية للمبادرة: الشفافية، الاحترام المتبادل، والعمل الجماعي.</li>
+                <li>يُلزم كل عضو بالمشاركة في نشاط واحد على الأقل كل شهر.</li>
+                <li>يُمنع استخدام اسم المبادرة أو شعارها في أي غرض شخصي أو تجاري بدون إذن رسمي.</li>
+                <li>تُتخذ القرارات الاستراتيجية بالتصويت داخل مجلس الإدارة أو الجمعية العمومية.</li>
+                <li>يحق لأي عضو تقديم اقتراحات أو شكاوى عبر البريد الرسمي info@basmatda3m.org</li>
+                <li>يُحظر تماماً أي شكل من أشكال التمييز داخل المبادرة.</li>
+                <li>يجب الحفاظ على سرية بيانات الأعضاء وعدم نشرها خارج المبادرة.</li>
+                <li>في حالة مخالفة أي بند، يحق لمجلس الإدارة اتخاذ الإجراء المناسب حتى الفصل.</li>
+            </ol>
+
+            <div class="last-update">
+                <i class="fas fa-calendar-alt"></i> آخر تحديث: أبريل 2026
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-footer">
+                        <svg width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                        </svg>
+                        <h3>بصمة دعم</h3>
+                    </div>
+                    <p>نترك بصمة في كل شاب وشابة</p>
+                </div>
+                <div>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html">عن المبادرة</a></li>
+                        <li><a href="join.html">انضم الآن</a></li>
+                        <li><a href="news.html">الأخبار</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@basmatda3m.org</li>
+                        <li><i class="fab fa-whatsapp"></i> 0155 123 4567</li>
+                        <li><i class="fab fa-instagram"></i> @basmatda3m</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تابعنا</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p>© 2026 مبادرة بصمة دعم - كل الحقوق محفوظة</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>تسجيل الدخول</h3>
+            <input type="email" id="loginEmail" placeholder="البريد الإلكتروني">
+            <input type="password" id="loginPass" placeholder="كلمة المرور">
+            <button onclick="fakeLogin()">دخول</button>
+            <p onclick="hideLoginModal()" style="cursor:pointer; color:#0066CC; margin-top:15px;">إغلاق</p>
+        </div>
+    </div>
+
+    <script>
+        function showLoginModal() { document.getElementById('loginModal').style.display = 'flex'; }
+        function hideLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
+        function fakeLogin() { alert('تم تسجيل الدخول بنجاح (تجريبي)'); hideLoginModal(); }
+        function toggleMobileMenu() { document.querySelector('.nav-menu').classList.toggle('mobile-active'); }
+
+        window.addEventListener('load', () => {
+            console.log('%c✅ صفحة اللائحة الداخلية + زرار التحميل جاهزة!', 'color:#F4A261; font-size:20px; font-weight:bold');
+        });
+    </script>
+</body>
+</html>

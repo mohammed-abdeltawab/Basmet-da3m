@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الهيكل التنظيمي | بصمة دعم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .structure-hero {
+            background: linear-gradient(135deg, #0066CC, #004488);
+            color: white;
+            padding: 140px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .structure-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -40%;
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
+            animation: pulse 20s infinite ease-in-out;
+        }
+        .org-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1300px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .org-btn {
+            font-family: 'Tajawal', sans-serif !important;
+            background: white;
+            border: none;
+            border-radius: 20px;
+            padding: 25px 30px;
+            font-size: 21px;
+            font-weight: 700;
+            color: #1A2A44;
+            box-shadow: 0 10px 30px rgba(0,102,204,0.15);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            position: relative;
+        }
+        .org-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(244,162,97,0.3);
+        }
+        .org-btn.active {
+            padding-bottom: 30px;
+            box-shadow: 0 25px 50px rgba(244,162,97,0.4);
+        }
+        .btn-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .detail-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            margin-top: 20px;
+        }
+        .org-btn.active .detail-content {
+            max-height: 800px;
+        }
+        .person {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #eee;
+        }
+        .person:last-child { border-bottom: none; margin-bottom: 0; }
+        .person img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #F4A261;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                </svg>
+                <h1>بصمة دعم</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن المبادرة</a></li>
+                <li><a href="news.html">أهم الأخبار</a></li>
+                <li><a href="structure.html" class="active">الهيكل التنظيمي</a></li>
+                <li><a href="rules.html">اللائحة الداخلية</a></li>
+                <li><a href="join.html">انضم الآن</a></li>
+                <li><a href="achievements.html">الإنجازات</a></li>
+                <li><a href="partners.html">شركاء النجاح</a></li>
+                <li><a href="ambassadors.html">سفراء بصمة دعم</a></li>
+                <li><a href="courses.html">الدورات والفعاليات</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" onclick="showLoginModal()" class="btn-login"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</a>
+            </div>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="structure-hero">
+        <div class="container">
+            <h1>الهيكل التنظيمي</h1>
+            <p>اضغط على أي قسم لترى التفاصيل داخل الزر</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="org-buttons" id="orgButtons"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-footer">
+                        <svg width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                        </svg>
+                        <h3>بصمة دعم</h3>
+                    </div>
+                    <p>نترك بصمة في كل شاب وشابة</p>
+                </div>
+                <div>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html">عن المبادرة</a></li>
+                        <li><a href="join.html">انضم الآن</a></li>
+                        <li><a href="news.html">الأخبار</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@basmatda3m.org</li>
+                        <li><i class="fab fa-whatsapp"></i> 0155 123 4567</li>
+                        <li><i class="fab fa-instagram"></i> @basmatda3m</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تابعنا</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p>© 2026 مبادرة بصمة دعم - كل الحقوق محفوظة</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const sections = [
+            { title: "رئاسة بصمة دعم", content: `<div class="person"><img src="https://picsum.photos/id/64/300/300" alt=""><div><h3>م/ عبد الرحمن أحمد فتحي</h3><p style="color:#F4A261; font-weight:700;">رئيس بصمة دعم</p></div></div>` },
+            { title: "المكتب الاستشاري", content: `
+                <div class="person"><img src="https://picsum.photos/id/1005/300/300" alt=""><div><h3>د. محمود أسامة</h3><p>مستشار إداري</p></div></div>
+                <div class="person"><img src="https://picsum.photos/id/201/300/300" alt=""><div><h3>أحمد ضياء</h3><p>مستشار قانوني</p></div></div>
+                <div class="person"><img src="https://picsum.photos/id/237/300/300" alt=""><div><h3>نورهان محمد</h3><p>مستشار إعلامي</p></div></div>
+                <div class="person"><img src="https://picsum.photos/id/180/300/300" alt=""><div><h3>أسماء محمد</h3><p>مستشار التدريب</p></div></div>
+                <div class="person"><img src="https://picsum.photos/id/251/300/300" alt=""><div><h3>عبدالله الأزهري</h3><p>مستشار القيم والتوجيه</p></div></div>` },
+            { title: "المركز الإعلامي والدعم الفني", content: `
+                <div class="person"><img src="https://picsum.photos/id/312/300/300" alt=""><div><h3>معتز نور</h3><p>صانع المحتوى المصور</p></div></div>
+                <div class="person"><img src="https://picsum.photos/id/29/300/300" alt=""><div><h3>محمد عبدالتواب</h3><p>مدير المواقع</p></div></div>
+                <div class="person"><h3>فريق G.M.A</h3><p>إدارة الميديا ودعم المعلومات</p></div>` },
+            { title: "قطاع العلاقات العامة", content: `
+                <div class="person"><img src="https://picsum.photos/id/870/300/300" alt=""><div><h3>دنيا فرج</h3><p>رئيس القطاع</p></div></div>
+                <div class="person"><img src="https://picsum.photos/id/1015/300/300" alt=""><div><h3>هنا محمود</h3><p>نائب رئيس القطاع</p></div></div>` },
+            { title: "قطاع التنظيم والمراسم", content: `<div class="person"><img src="https://picsum.photos/id/64/300/300" alt=""><div><h3>محمود إبراهيم</h3><p>رئيس القطاع</p></div></div>` },
+            { title: "قطاع الموارد البشرية", content: `<div class="person"><img src="https://picsum.photos/id/1005/300/300" alt=""><div><h3>شهد غريب</h3><p>رئيس القطاع</p></div></div>` },
+            { title: "الإدارات الفرعية للمحافظات", content: `
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+                    <div><strong>١- محافظة الشرقية</strong><br><img src="https://picsum.photos/id/201/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
+                    <div><strong>٢- محافظة الجيزة</strong><br><img src="https://picsum.photos/id/237/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
+                    <div><strong>٣- محافظة القاهرة</strong><br><img src="https://picsum.photos/id/180/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
+                    <div><strong>٤- محافظة الأقصر</strong><br><img src="https://picsum.photos/id/251/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
+                    <div><strong>٥- محافظة البحر الأحمر</strong><br><img src="https://picsum.photos/id/29/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
+                    <div><strong>٦- محافظة البحيرة</strong><br><img src="https://picsum.photos/id/312/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
+                </div>` }
+        ];
+
+        function renderButtons() {
+            const container = document.getElementById('orgButtons');
+            container.innerHTML = '';
+            sections.forEach((section, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'org-btn';
+                btn.innerHTML = `
+                    <div class="btn-header">
+                        <span>${section.title}</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="detail-content">${section.content}</div>
+                `;
+                btn.onclick = () => toggleButton(btn);
+                container.appendChild(btn);
+            });
+        }
+
+        function toggleButton(clickedBtn) {
+            const allBtns = document.querySelectorAll('.org-btn');
+            allBtns.forEach(b => {
+                if (b !== clickedBtn) b.classList.remove('active');
+            });
+            clickedBtn.classList.toggle('active');
+        }
+
+        window.addEventListener('load', renderButtons);
+    </script>
+</body>
+</html>

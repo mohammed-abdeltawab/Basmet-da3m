@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="عن مبادرة بصمة دعم - مبادرة شبابية مصرية لتمكين الشباب">
+    <title>عن المبادرة | بصمة دعم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- تصميم خاص بصفحة "عن المبادرة" - عصري وشبابي فخم -->
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #0066CC, #004488);
+            color: white;
+            padding: 140px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -40%;
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
+            animation: pulse 20s infinite ease-in-out;
+        }
+        .about-hero h1 {
+            font-size: clamp(48px, 7vw, 68px);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .about-hero .accent {
+            color: #F4A261;
+        }
+        .about-hero p {
+            font-size: 24px;
+            max-width: 760px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+
+        .about-section {
+            padding: 90px 20px;
+            background: #F8FAFC;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            font-size: 19px;
+            line-height: 1.9;
+            color: #334155;
+            background: white;
+            padding: 50px;
+            border-radius: 28px;
+            box-shadow: 0 15px 40px rgba(0,102,204,0.1);
+            margin-bottom: 70px;
+        }
+
+        .golden-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .golden-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(244,162,97,0.15);
+            transition: all 0.4s;
+        }
+
+        .golden-card:hover {
+            transform: translateY(-12px);
+        }
+
+        .golden-header {
+            background: linear-gradient(90deg, #F4A261, #f0c14b);
+            color: #004488;
+            padding: 22px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .golden-body {
+            padding: 32px;
+            text-align: center;
+            font-size: 18px;
+            color: #1A2A44;
+            line-height: 1.8;
+        }
+
+        .values-section {
+            background: white;
+            padding: 80px 20px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .value-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #F4A261, #f0c14b);
+            color: #004488;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 25px rgba(244,162,97,0.4);
+        }
+
+        .value-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #1A2A44;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .timeline-dot {
+            width: 22px;
+            height: 22px;
+            background: #F4A261;
+            border: 4px solid #0066CC;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 22px 28px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,102,204,0.1);
+        }
+
+        .timeline-content strong {
+            color: #F4A261;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (نفس السابق) -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                </svg>
+                <h1>بصمة دعم</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html" class="active">عن المبادرة</a></li>
+                <li><a href="news.html">أهم الأخبار</a></li>
+                <li><a href="structure.html">الهيكل التنظيمي</a></li>
+                <li><a href="rules.html">اللائحة الداخلية</a></li>
+                <li><a href="join.html">انضم الآن</a></li>
+                <li><a href="achievements.html">الإنجازات</a></li>
+                <li><a href="partners.html">شركاء النجاح</a></li>
+                <li><a href="ambassadors.html">سفراء بصمة دعم</a></li>
+                <li><a href="courses.html">الدورات والفعاليات</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" onclick="showLoginModal()" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                </a>
+            </div>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero خاص بصفحة "عن المبادرة" -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>من نحن؟ <span class="accent">بصمة دعم</span></h1>
+            <p>مبادرة شبابية مصرية غير ربحية.. نؤمن أن كل شاب وشابة لديه بصمة فريدة تستحق أن تُترك في المجتمع</p>
+        </div>
+    </section>
+
+    <div class="about-section">
+        <div class="about-container">
+
+            <!-- النبذة الطويلة -->
+            <div class="about-text">
+                <h2 style="text-align:center; margin-bottom:30px; color:#1A2A44;">قصتنا</h2>
+                <p>
+                    تأسست <strong>مبادرة بصمة دعم</strong> في عام 2024 على يد مجموعة من الشباب المصري الطموح الذي يؤمن بأن الشباب هم وقود التغيير الحقيقي في مصر.<br><br>
+                    بدأنا كفكرة صغيرة في غرفة جامعية، ثم تحولنا إلى مبادرة وطنية تغطي الآن أكثر من ١٧ محافظة. هدفنا ليس فقط دعم الشباب، بل إعطاؤهم الأدوات والفرص والثقة ليصنعوا مستقبلهم بأنفسهم.
+                </p>
+                <p>
+                    نعمل من خلال برامج تدريبية، فعاليات مجتمعية، شراكات استراتيجية، ومشاريع ريادية. كل ما نقوم به يحمل شعار واحد: 
+                    <strong style="color:#F4A261;">«بصمتك هتبقى الأقوى»</strong>
+                </p>
+            </div>
+
+            <!-- رؤيتنا + رسالتنا (كروت ذهبية) -->
+            <h2 class="section-title" style="text-align:center; margin-bottom:40px;">رؤيتنا ورسالتنا</h2>
+            <div class="golden-cards">
+                <div class="golden-card">
+                    <div class="golden-header">
+                        <i class="fas fa-eye"></i> رؤيتنا
+                    </div>
+                    <div class="golden-body">
+                        شباب مصري واعٍ وقادر على صناعة التغيير الإيجابي، يترك بصمة خالدة في كل مجال يدخله.
+                    </div>
+                </div>
+                <div class="golden-card">
+                    <div class="golden-header">
+                        <i class="fas fa-bullseye"></i> رسالتنا
+                    </div>
+                    <div class="golden-body">
+                        تقديم الدعم الشامل للشباب من خلال التدريب، التمكين، والفرص العملية ليصبحوا قادة المستقبل.
+                    </div>
+                </div>
+            </div>
+
+            <!-- قيمنا -->
+            <h2 class="section-title" style="text-align:center; margin-bottom:40px;">قيمنا</h2>
+            <div class="values-section">
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>الابتكار</h3>
+                        <p>نؤمن بأفكار جديدة وغير تقليدية</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-hands-helping"></i></div>
+                        <h3>التضامن</h3>
+                        <p>معاً نصل إلى أبعد</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-star"></i></div>
+                        <h3>التميز</h3>
+                        <p>نعمل باحترافية ودقة</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-seedling"></i></div>
+                        <h3>الاستدامة</h3>
+                        <p>نبني للمستقبل لا للحاضر فقط</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- تاريخ التأسيس والأهداف -->
+            <h2 class="section-title" style="text-align:center; margin-top:80px;">تاريخنا وأهدافنا</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <strong>أكتوبر 2024</strong><br>
+                        تأسيس المبادرة في القاهرة بـ ١٢ عضو مؤسس
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <strong>يناير 2025</strong><br>
+                        إطلاق أول برنامج تدريبي «بصمة قيادة»
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <strong>الآن ٢٠٢٦</strong><br>
+                        تغطية ١٧ محافظة • أكثر من ١٢٤٥ متطوع • ٨٧ مشروع منجز
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:50px;">
+                <h3 style="font-size:28px; color:#1A2A44;">أهدافنا حتى ٢٠٢٨</h3>
+                <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px;">
+                    <div style="background:#F4A261; color:#004488; padding:18px 40px; border-radius:50px; font-size:19px; font-weight:700;">تمكين ١٠,٠٠٠ شاب</div>
+                    <div style="background:#F4A261; color:#004488; padding:18px 40px; border-radius:50px; font-size:19px; font-weight:700;">إطلاق ٥٠ مشروع مجتمعي</div>
+                    <div style="background:#F4A261; color:#004488; padding:18px 40px; border-radius:50px; font-size:19px; font-weight:700;">تغطية جميع محافظات مصر</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-footer">
+                        <svg width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                        </svg>
+                        <h3>بصمة دعم</h3>
+                    </div>
+                    <p>نترك بصمة في كل شاب وشابة</p>
+                </div>
+                
+                <div>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html">عن المبادرة</a></li>
+                        <li><a href="join.html">انضم الآن</a></li>
+                        <li><a href="news.html">الأخبار</a></li>
+                        <li><a href="courses.html">الدورات</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@basmatda3m.org</li>
+                        <li><i class="fab fa-whatsapp"></i> 0155 123 4567</li>
+                        <li><i class="fab fa-instagram"></i> @basmatda3m</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>تابعنا</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p>© ٢٠٢٦ مبادرة بصمة دعم - كل الحقوق محفوظة</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal تسجيل الدخول -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>تسجيل الدخول</h3>
+            <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required>
+            <input type="password" id="loginPass" placeholder="كلمة المرور" required>
+            <button onclick="fakeLogin()">دخول</button>
+            <p onclick="hideLoginModal()" style="cursor:pointer; color:#0066CC; margin-top:15px;">إغلاق</p>
+            <p>ليس لديك حساب؟ <a href="join.html">سجل الآن</a></p>
+        </div>
+    </div>
+
+    <script>
+        // الدوال المشتركة
+        function showLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+        function hideLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+        function fakeLogin() {
+            alert('تم تسجيل الدخول بنجاح (واجهة تجريبية)');
+            hideLoginModal();
+        }
+        function toggleMobileMenu() {
+            document.querySelector('.nav-menu').classList.toggle('mobile-active');
+        }
+
+        window.addEventListener('load', () => {
+            console.log('%c✅ صفحة "عن المبادرة" جاهزة - تصميم فخم وعصري!', 'color:#F4A261; font-size:20px; font-weight:bold');
+        });
+    </script>
+</body>
+</html>

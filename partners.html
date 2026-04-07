@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سفراء بصمة دعم">
+    <title>سفراء بصمة دعم | بصمة دعم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        .amb-hero {
+            background: linear-gradient(135deg, #0066CC, #004488);
+            color: white;
+            padding: 140px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .amb-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -40%;
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
+            animation: pulse 20s infinite ease-in-out;
+        }
+        .amb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .amb-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,102,204,0.12);
+            transition: all 0.4s;
+        }
+        .amb-card:hover {
+            transform: translateY(-15px);
+        }
+        .amb-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+        .amb-info {
+            padding: 22px;
+            text-align: center;
+        }
+        .amb-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1A2A44;
+            margin-bottom: 4px;
+        }
+        .amb-city {
+            color: #F4A261;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .amb-bio {
+            font-size: 16.5px;
+            line-height: 1.7;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                </svg>
+                <h1>بصمة دعم</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن المبادرة</a></li>
+                <li><a href="news.html">أهم الأخبار</a></li>
+                <li><a href="structure.html">الهيكل التنظيمي</a></li>
+                <li><a href="rules.html">اللائحة الداخلية</a></li>
+                <li><a href="join.html">انضم الآن</a></li>
+                <li><a href="achievements.html">الإنجازات</a></li>
+                <li><a href="partners.html">شركاء النجاح</a></li>
+                <li><a href="ambassadors.html" class="active">سفراء بصمة دعم</a></li>
+                <li><a href="courses.html">الدورات والفعاليات</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" onclick="showLoginModal()" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                </a>
+            </div>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="amb-hero">
+        <div class="container">
+            <h1>سفراء بصمة دعم</h1>
+            <p>شباب وشابات بيتركوا بصمة حقيقية في كل محافظة</p>
+        </div>
+    </section>
+
+    <!-- السفراء -->
+    <div class="amb-grid container">
+        <div class="amb-card">
+            <img src="https://picsum.photos/id/64/600/600" alt="لينا حسن">
+            <div class="amb-info">
+                <div class="amb-name">لينا حسن</div>
+                <div class="amb-city">الإسكندرية</div>
+                <div class="amb-bio">طالبة طب سنة رابعة، قائدة حملة "بصمة بيئية" وناشطة في حقوق الشباب. شاركت في 12 فعالية حتى الآن.</div>
+            </div>
+        </div>
+
+        <div class="amb-card">
+            <img src="https://picsum.photos/id/1005/600/600" alt="كريم الشريف">
+            <div class="amb-info">
+                <div class="amb-name">كريم الشريف</div>
+                <div class="amb-city">القاهرة</div>
+                <div class="amb-bio">مهندس برمجيات، مؤسس نادي ريادة الأعمال في الجامعة. يقدم ورش عمل "ابدأ مشروعك" لأكثر من 800 شاب.</div>
+            </div>
+        </div>
+
+        <div class="amb-card">
+            <img src="https://picsum.photos/id/201/600/600" alt="نور محمد">
+            <div class="amb-info">
+                <div class="amb-name">نور محمد</div>
+                <div class="amb-city">الجيزة</div>
+                <div class="amb-bio">طالبة إعلام، سفيرة التواصل الاجتماعي. زادت متابعي المبادرة على إنستجرام بأكثر من ١٥ ألف متابع في ٣ أشهر.</div>
+            </div>
+        </div>
+
+        <div class="amb-card">
+            <img src="https://picsum.photos/id/237/600/600" alt="أحمد خالد">
+            <div class="amb-info">
+                <div class="amb-name">أحمد خالد</div>
+                <div class="amb-city">المنصورة</div>
+                <div class="amb-bio">خريج هندسة، قائد فريق التدريب. درب أكثر من ٤٢٠ شاب في برنامج "مهارات القيادة".</div>
+            </div>
+        </div>
+
+        <div class="amb-card">
+            <img src="https://picsum.photos/id/180/600/600" alt="سارة علي">
+            <div class="amb-info">
+                <div class="amb-name">سارة علي</div>
+                <div class="amb-city">أسوان</div>
+                <div class="amb-bio">ناشطة مجتمعية، قائدة حملة "بصمة تعليم" في النوبة. ساعدت ١٨٠ طالب في الوصول للتعليم الجامعي.</div>
+            </div>
+        </div>
+
+        <div class="amb-card">
+            <img src="https://picsum.photos/id/251/600/600" alt="محمود رمضان">
+            <div class="amb-info">
+                <div class="amb-name">محمود رمضان</div>
+                <div class="amb-city">بورسعيد</div>
+                <div class="amb-bio">رياضي ومدرب، أطلق مبادرة "بصمة رياضية" لتدريب الشباب على الرياضة والصحة النفسية.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-footer">
+                        <svg width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                        </svg>
+                        <h3>بصمة دعم</h3>
+                    </div>
+                    <p>نترك بصمة في كل شاب وشابة</p>
+                </div>
+                <div>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html">عن المبادرة</a></li>
+                        <li><a href="join.html">انضم الآن</a></li>
+                        <li><a href="news.html">الأخبار</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@basmatda3m.org</li>
+                        <li><i class="fab fa-whatsapp"></i> 0155 123 4567</li>
+                        <li><i class="fab fa-instagram"></i> @basmatda3m</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تابعنا</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p>© 2026 مبادرة بصمة دعم - كل الحقوق محفوظة</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>تسجيل الدخول</h3>
+            <input type="email" id="loginEmail" placeholder="البريد الإلكتروني">
+            <input type="password" id="loginPass" placeholder="كلمة المرور">
+            <button onclick="fakeLogin()">دخول</button>
+            <p onclick="hideLoginModal()" style="cursor:pointer; color:#0066CC; margin-top:15px;">إغلاق</p>
+        </div>
+    </div>
+
+    <script>
+        function showLoginModal() { document.getElementById('loginModal').style.display = 'flex'; }
+        function hideLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
+        function fakeLogin() { alert('تم تسجيل الدخول بنجاح (تجريبي)'); hideLoginModal(); }
+        function toggleMobileMenu() { document.querySelector('.nav-menu').classList.toggle('mobile-active'); }
+
+        window.addEventListener('load', () => {
+            console.log('%c✅ صفحة السفراء جاهزة مع اسم + نبذة!', 'color:#F4A261; font-size:20px; font-weight:bold');
+        });
+    </script>
+</body>
+</html>

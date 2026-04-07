@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="إنجازات مبادرة بصمة دعم">
+    <title>الإنجازات | بصمة دعم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>.ach-hero {
+    background: linear-gradient(135deg, #0066CC, #004488);
+    color: white;
+    padding: 140px 20px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ach-hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
+    animation: pulse 20s infinite ease-in-out;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ach-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,102,204,0.12);
+    transition: all 0.4s;
+}
+
+.stat-card:hover {
+    transform: translateY(-12px);
+}
+
+.counter {
+    font-size: clamp(42px, 8vw, 62px);
+    font-weight: 700;
+    color: #F4A261;
+    line-height: 1;
+}
+
+.ach-list {
+    padding: 80px 20px;
+    background: #F8FAFC;
+}
+
+.ach-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,102,204,0.1);
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+    .ach-hero {
+        padding: 80px 20px 60px;
+    }
+}
+ 
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                </svg>
+                <h1>بصمة دعم</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن المبادرة</a></li>
+                <li><a href="news.html">أهم الأخبار</a></li>
+                <li><a href="structure.html">الهيكل التنظيمي</a></li>
+                <li><a href="rules.html">اللائحة الداخلية</a></li>
+                <li><a href="join.html">انضم الآن</a></li>
+                <li><a href="achievements.html" class="active">الإنجازات</a></li>
+                <li><a href="partners.html">شركاء النجاح</a></li>
+                <li><a href="ambassadors.html">سفراء بصمة دعم</a></li>
+                <li><a href="courses.html">الدورات والفعاليات</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" onclick="showLoginModal()" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                </a>
+            </div>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="ach-hero">
+        <div class="container">
+            <h1>إنجازاتنا حتى الآن</h1>
+            <p>كل بصمة بنتركها.. بتغير حياة شاب أو شابة</p>
+        </div>
+    </section>
+
+    <!-- الأرقام الكبيرة -->
+    <div class="stats-grid container">
+        <div class="stat-card">
+            <div class="counter" data-count="1245">0</div>
+            <h3>متطوع نشط</h3>
+        </div>
+        <div class="stat-card">
+            <div class="counter" data-count="87">0</div>
+            <h3>مشروع منجز</h3>
+        </div>
+        <div class="stat-card">
+            <div class="counter" data-count="23">0</div>
+            <h3>محافظة مغطاة</h3>
+        </div>
+        <div class="stat-card">
+            <div class="counter" data-count="18400">0</div>
+            <h3>شاب وشابة استفادوا</h3>
+        </div>
+    </div>
+
+    <!-- قائمة الإنجازات -->
+    <div class="ach-list">
+        <div class="container">
+            <h2 class="section-title" style="text-align:center; margin-bottom:50px;">أبرز الإنجازات</h2>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:30px;">
+                <div class="ach-card">
+                    <img src="https://picsum.photos/id/1015/800/400" alt="" style="width:100%; height:220px; object-fit:cover;">
+                    <div style="padding:25px;">
+                        <span style="background:#F4A261; color:#004488; padding:6px 18px; border-radius:50px; font-size:14px;">مارس 2026</span>
+                        <h3 style="margin:15px 0;">إطلاق برنامج بصمة مستقبل في 7 محافظات</h3>
+                        <p>شارك أكثر من 1200 شاب في أكبر برنامج تدريبي للقيادة الشبابية.</p>
+                    </div>
+                </div>
+                <div class="ach-card">
+                    <img src="https://picsum.photos/id/237/800/400" alt="" style="width:100%; height:220px; object-fit:cover;">
+                    <div style="padding:25px;">
+                        <span style="background:#F4A261; color:#004488; padding:6px 18px; border-radius:50px; font-size:14px;">فبراير 2026</span>
+                        <h3 style="margin:15px 0;">توقيع شراكة مع وزارة الشباب والرياضة</h3>
+                        <p>اتفاقية استراتيجية لدعم 5000 شاب في ريادة الأعمال.</p>
+                    </div>
+                </div>
+                <div class="ach-card">
+                    <img src="https://picsum.photos/id/180/800/400" alt="" style="width:100%; height:220px; object-fit:cover;">
+                    <div style="padding:25px;">
+                        <span style="background:#F4A261; color:#004488; padding:6px 18px; border-radius:50px; font-size:14px;">يناير 2026</span>
+                        <h3 style="margin:15px 0;">حملة بصمة بيئية في 12 منطقة</h3>
+                        <p>650 متطوع شاركوا في تنظيف السواحل والمناطق النائية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-footer">
+                        <svg width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                        </svg>
+                        <h3>بصمة دعم</h3>
+                    </div>
+                    <p>نترك بصمة في كل شاب وشابة</p>
+                </div>
+                <div>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html">عن المبادرة</a></li>
+                        <li><a href="join.html">انضم الآن</a></li>
+                        <li><a href="news.html">الأخبار</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@basmatda3m.org</li>
+                        <li><i class="fab fa-whatsapp"></i> 0155 123 4567</li>
+                        <li><i class="fab fa-instagram"></i> @basmatda3m</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تابعنا</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p>© 2026 مبادرة بصمة دعم - كل الحقوق محفوظة</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>تسجيل الدخول</h3>
+            <input type="email" id="loginEmail" placeholder="البريد الإلكتروني">
+            <input type="password" id="loginPass" placeholder="كلمة المرور">
+            <button onclick="fakeLogin()">دخول</button>
+            <p onclick="hideLoginModal()" style="cursor:pointer; color:#0066CC; margin-top:15px;">إغلاق</p>
+        </div>
+    </div>
+
+    <script>
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                let count = 0;
+                const speed = 30;
+                const increment = target / 60;
+
+                const timer = setInterval(() => {
+                    count += increment;
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(count).toLocaleString('ar-EG');
+                }, speed);
+            });
+        }
+
+        // Common functions
+        function showLoginModal() { document.getElementById('loginModal').style.display = 'flex'; }
+        function hideLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
+        function fakeLogin() { alert('تم تسجيل الدخول بنجاح (تجريبي)'); hideLoginModal(); }
+        function toggleMobileMenu() { document.querySelector('.nav-menu').classList.toggle('mobile-active'); }
+
+        window.addEventListener('load', () => {
+            animateCounters();
+            console.log('%c✅ صفحة الإنجازات جاهزة وresponsive!', 'color:#F4A261; font-size:20px; font-weight:bold');
+        });
+    </script>
+</body>
+</html>

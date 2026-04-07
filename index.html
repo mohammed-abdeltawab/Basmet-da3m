@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مبادرة بصمة دعم - مبادرة شبابية مصرية لدعم الشباب وتمكينهم">
+    <title>مبادرة بصمة دعم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ====================== NAVBAR مشترك (انسخه في كل صفحة) ====================== -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- اللوجو -->
+            <div class="logo">
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                </svg>
+                <h1>بصمة دعم</h1>
+            </div>
+
+            <!-- القائمة -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="about.html">عن المبادرة</a></li>
+                <li><a href="news.html">أهم الأخبار</a></li>
+                <li><a href="structure.html">الهيكل التنظيمي</a></li>
+                <li><a href="rules.html">اللائحة الداخلية</a></li>
+                <li><a href="join.html" class="highlight">انضم الآن</a></li>
+                <li><a href="achievements.html">الإنجازات</a></li>
+                <li><a href="partners.html">شركاء النجاح</a></li>
+                <li><a href="ambassadors.html">سفراء بصمة دعم</a></li>
+                <li><a href="courses.html">الدورات والفعاليات</a></li>
+            </ul>
+
+            <!-- زر تسجيل الدخول -->
+            <div class="nav-actions">
+                <a href="#" onclick="showLoginModal()" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                </a>
+            </div>
+
+            <!-- زر الموبايل -->
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ====================== HERO الرئيسية ====================== -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <div class="hero-text">
+                <span class="badge">مبادرة شبابية مصرية</span>
+                <h1>انضم إلى <span class="accent">بصمة دعم</span></h1>
+                <p>نترك بصمة في كل شاب وشابة.. معاً نبني مستقبل مصر</p>
+                <div class="hero-buttons">
+                    <a href="join.html" class="btn-primary btn-large">انضم الآن</a>
+                    <a href="about.html" class="btn-secondary">تعرف علينا</a>
+                </div>
+                <div class="hero-stats">
+                    <div><strong>1245</strong> متطوع</div>
+                    <div><strong>87</strong> مشروع</div>
+                    <div><strong>23</strong> محافظة</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- صورة خلفية (يمكنك استبدالها بصورة حقيقية لشباب مصريين) -->
+        <img src="https://picsum.photos/id/1015/1920/1080" alt="بصمة دعم" class="hero-bg">
+    </section><!-- ====================== أهم الأخبار (سكرول تلقائي لا نهائي - النسخة المضمونة) ====================== -->
+<section class="news-scroll">
+    <div class="container">
+        <h2 class="section-title">أهم الأخبار</h2>
+        <div class="scroll-container" id="newsScroll">
+            <div class="scroll-track" id="newsTrack"></div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- ====================== أقسام مختصرة (من نحن، رؤيتنا..) ====================== -->
+    <section class="sections-grid container">
+        <div class="custom-card">
+            <div class="card-header">من نحن</div>
+            <div class="card-body">
+                <p>مبادرة شبابية مصرية غير ربحية تأسست عام 2024 بهدف تمكين الشباب ودعمهم في مختلف المجالات التعليمية والمهنية والاجتماعية.</p>
+                <a href="about.html" class="btn-link">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+        
+        <div class="custom-card">
+            <div class="card-header">رؤيتنا</div>
+            <div class="card-body">
+                <p>شباب مصري واعٍ وقادر على صناعة التغيير، يترك بصمة إيجابية في المجتمع.</p>
+                <a href="about.html" class="btn-link">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+        
+        <div class="custom-card">
+            <div class="card-header">رسالتنا</div>
+            <div class="card-body">
+                <p>تقديم الدعم الشامل للشباب من خلال البرامج التدريبية، الفعاليات، والشراكات الاستراتيجية.</p>
+                <a href="about.html" class="btn-link">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+        
+        <div class="custom-card">
+            <div class="card-header">أهدافنا</div>
+            <div class="card-body">
+                <ul>
+                    <li>تمكين 10,000 شاب بحلول 2028</li>
+                    <li>إطلاق 50 مشروعاً مجتمعياً سنوياً</li>
+                    <li>تغطية كل محافظات مصر</li>
+                </ul>
+                <a href="about.html" class="btn-link">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- روابط سريعة -->
+    <section class="quick-links container">
+        <h2 class="section-title">استكشف المبادرة</h2>
+        <div class="links-grid">
+            <a href="structure.html" class="quick-card">الهيكل التنظيمي <i class="fas fa-sitemap"></i></a>
+            <a href="rules.html" class="quick-card">اللائحة الداخلية <i class="fas fa-book"></i></a>
+            <a href="achievements.html" class="quick-card">إنجازاتنا <i class="fas fa-trophy"></i></a>
+            <a href="courses.html" class="quick-card">الدورات والفعاليات <i class="fas fa-calendar"></i></a>
+        </div>
+    </section>
+
+    <!-- ====================== FOOTER مشترك (انسخه في نهاية كل صفحة) ====================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-footer">
+                        <svg width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
+                            <circle cx="50" cy="50" r="12" fill="#0066CC"/>
+                        </svg>
+                        <h3>بصمة دعم</h3>
+                    </div>
+                    <p>نترك بصمة في كل شاب وشابة</p>
+                </div>
+                
+                <div>
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html">عن المبادرة</a></li>
+                        <li><a href="join.html">انضم الآن</a></li>
+                        <li><a href="news.html">الأخبار</a></li>
+                        <li><a href="courses.html">الدورات</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@basmatda3m.org</li>
+                        <li><i class="fab fa-whatsapp"></i> 0155 123 4567</li>
+                        <li><i class="fab fa-instagram"></i> @basmatda3m</li>
+                        <li><i class="fab fa-facebook"></i> بصمة دعم</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>تابعنا</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p>© 2026 مبادرة بصمة دعم - كل الحقوق محفوظة</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal تسجيل الدخول (بسيط للعرض) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>تسجيل الدخول</h3>
+            <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required>
+            <input type="password" id="loginPass" placeholder="كلمة المرور" required>
+            <button onclick="fakeLogin()">دخول</button>
+            <p onclick="hideLoginModal()" style="cursor:pointer; color:#0066CC; margin-top:15px;">إغلاق</p>
+            <p>ليس لديك حساب؟ <a href="join.html">سجل الآن</a></p>
+        </div>
+    </div>
+
+    <script>
+    // ====================== Infinite Seamless News Scroll - Fixed Version ======================
+const newsData = [
+    { title: "إطلاق برنامج «بصمة مستقبل» في 7 محافظات", date: "5 أبريل 2026", img: "https://picsum.photos/id/1015/300/200" },
+    { title: "توقيع شراكة مع وزارة الشباب والرياضة", date: "3 أبريل 2026", img: "https://picsum.photos/id/237/300/200" },
+    { title: "نجاح دورة «مهارات القيادة» بمشاركة 420 شاب", date: "30 مارس 2026", img: "https://picsum.photos/id/180/300/200" },
+    { title: "معرض الإبداع الشبابي في جامعة القاهرة", date: "28 مارس 2026", img: "https://picsum.photos/id/251/300/200" },
+    { title: "حملة «بصمة بيئية» تنظف 12 منطقة في الدلتا", date: "25 مارس 2026", img: "https://picsum.photos/id/29/300/200" },
+    { title: "تكريم أفضل 10 سفراء لمبادرة بصمة دعم", date: "20 مارس 2026", img: "https://picsum.photos/id/312/300/200" },
+    { title: "ورشة عمل «ريادة الأعمال» بالتعاون مع بنك مصر", date: "18 مارس 2026", img: "https://picsum.photos/id/870/300/200" }
+];
+
+function loadNewsScroll() {
+    const track = document.getElementById('newsTrack');
+    if (!track) return;
+
+    let html = '';
+    // نكرر المحتوى 3 مرات عشان الـ loop يكون سلس بدون أي توقف
+    for (let i = 0; i < 3; i++) {
+        newsData.forEach(item => {
+            html += `
+            <div class="news-item">
+                <img src="\( {item.img}" alt=" \){item.title}">
+                <div>
+                    <h4>${item.title}</h4>
+                    <span>${item.date}</span>
+                </div>
+            </div>`;
+        });
+    }
+    track.innerHTML = html;
+
+    // Scroll يدوي سلس باستخدام requestAnimationFrame
+    let scrollPos = 0;
+    const speed = 1.8;   // سرعة التمرير (عدلها لو عايز أبطأ أو أسرع)
+
+    function animate() {
+        scrollPos += speed;
+        track.style.transform = `translateX(-${scrollPos}px)`;
+
+        // إعادة التعيين بدون أي توقف أو اختفاء
+        if (scrollPos >= track.scrollWidth / 3) {
+            scrollPos = 0;
+        }
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
+
+// تشغيل السكرول
+window.addEventListener('load', () => {
+    loadNewsScroll();
+    console.log('%c✅ السكرول التلقائي للأخبار تم إصلاحه نهائياً!', 'color:#F4A261; font-size:18px; font-weight:bold');
+});
+    
+        // JavaScript مشترك بسيط (انسخه
+        // وظائف المودال
+        function showLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+        function hideLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+        function fakeLogin() {
+            alert('تم تسجيل الدخول بنجاح (واجهة تجريبية)');
+            hideLoginModal();
+        }
+
+        // قائمة الموبايل
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.nav-menu');
+            menu.classList.toggle('mobile-active');
+        }
+
+        // تشغيل كل الـ animations عند تحميل الصفحة
+        window.addEventListener('load', () => {
+            loadNewsScroll();
+            console.log('%c✅ موقع مبادرة بصمة دعم جاهز!', 'color:#F4A261; font-size:18px; font-weight:bold');
+        });
+    </script>
+</body>
+</html>
