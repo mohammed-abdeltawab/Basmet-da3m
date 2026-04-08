@@ -74,12 +74,55 @@
         
         <!-- صورة خلفية (يمكنك استبدالها بصورة حقيقية لشباب مصريين) -->
         <img src="https://picsum.photos/id/1015/1920/1080" alt="بصمة دعم" class="hero-bg">
-    </section><!-- ====================== أهم الأخبار (سكرول تلقائي لا نهائي - النسخة المضمونة) ====================== -->
+    </section>
+    
+    <!-- ====================== أهم الأخبار + زرار مزيد ====================== -->
 <section class="news-scroll">
     <div class="container">
         <h2 class="section-title">أهم الأخبار</h2>
-        <div class="scroll-container" id="newsScroll">
-            <div class="scroll-track" id="newsTrack"></div>
+        
+        <div class="scroll-container">
+            <div class="scroll-track">
+
+                <div class="news-item">
+                    <img src="https://picsum.photos/id/1015/300/200" alt="">
+                    <div><h4>إطلاق برنامج «بصمة مستقبل» في 7 محافظات</h4><span>5 أبريل 2026</span></div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://picsum.photos/id/237/300/200" alt="">
+                    <div><h4>توقيع شراكة مع وزارة الشباب والرياضة</h4><span>3 أبريل 2026</span></div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://picsum.photos/id/180/300/200" alt="">
+                    <div><h4>نجاح دورة «مهارات القيادة» بمشاركة 420 شاب</h4><span>30 مارس 2026</span></div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://picsum.photos/id/251/300/200" alt="">
+                    <div><h4>معرض الإبداع الشبابي في جامعة القاهرة</h4><span>28 مارس 2026</span></div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://picsum.photos/id/29/300/200" alt="">
+                    <div><h4>حملة «بصمة بيئية» تنظف 12 منطقة في الدلتا</h4><span>25 مارس 2026</span></div>
+                </div>
+
+                <div class="news-item">
+                    <img src="https://picsum.photos/id/312/300/200" alt="">
+                    <div><h4>تكريم أفضل 10 سفراء لمبادرة بصمة دعم</h4><span>20 مارس 2026</span></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- زرار مزيد من الأخبار -->
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="news.html" class="btn-primary" style="padding: 16px 50px; font-size: 20px; border-radius: 50px; display: inline-flex; align-items: center; gap: 12px;">
+                <i class="fas fa-arrow-left"></i>
+                مزيد من الأخبار
+            </a>
         </div>
     </div>
 </section>
@@ -198,17 +241,17 @@
 
     <script>
     // ====================== Infinite Seamless News Scroll - Fixed Version ======================
-const newsData = [
-    { title: "إطلاق برنامج «بصمة مستقبل» في 7 محافظات", date: "5 أبريل 2026", img: "https://picsum.photos/id/1015/300/200" },
-    { title: "توقيع شراكة مع وزارة الشباب والرياضة", date: "3 أبريل 2026", img: "https://picsum.photos/id/237/300/200" },
-    { title: "نجاح دورة «مهارات القيادة» بمشاركة 420 شاب", date: "30 مارس 2026", img: "https://picsum.photos/id/180/300/200" },
-    { title: "معرض الإبداع الشبابي في جامعة القاهرة", date: "28 مارس 2026", img: "https://picsum.photos/id/251/300/200" },
-    { title: "حملة «بصمة بيئية» تنظف 12 منطقة في الدلتا", date: "25 مارس 2026", img: "https://picsum.photos/id/29/300/200" },
-    { title: "تكريم أفضل 10 سفراء لمبادرة بصمة دعم", date: "20 مارس 2026", img: "https://picsum.photos/id/312/300/200" },
-    { title: "ورشة عمل «ريادة الأعمال» بالتعاون مع بنك مصر", date: "18 مارس 2026", img: "https://picsum.photos/id/870/300/200" }
-];
+//const newsData = [
+  //  { title: "إطلاق برنامج «بصمة مستقبل» في 7 محافظات", date: "5 أبريل 2026", img: "https://picsum.photos/id/1015/300/200" },
+//    { title: "توقيع شراكة مع وزارة الشباب والرياضة", date: "3 أبريل 2026", img: "https://picsum.photos/id/237/300/200" },
+ //   { title: "نجاح دورة «مهارات القيادة» بمشاركة 420 شاب", date: "30 مارس 2026", img: "https://picsum.photos/id/180/300/200" },
+//    { title: "معرض الإبداع الشبابي في جامعة القاهرة", date: "28 مارس 2026", img: "https://picsum.photos/id/251/300/200" },
+//    { title: "حملة «بصمة بيئية» تنظف 12 منطقة في الدلتا", date: "25 مارس 2026", img: "https://picsum.photos/id/29/300/200" },
+ //   { title: "تكريم أفضل 10 سفراء لمبادرة بصمة دعم", date: "20 مارس 2026", img: "https://picsum.photos/id/312/300/200" },
+   // { title: "ورشة عمل «ريادة الأعمال» بالتعاون مع بنك مصر", date: "18 مارس 2026", img: "https://picsum.photos/id/870/300/200" }
+//];
 
-function loadNewsScroll() {
+//function loadNewsScroll() {
     const track = document.getElementById('newsTrack');
     if (!track) return;
 
@@ -247,7 +290,7 @@ function loadNewsScroll() {
 }
 
 // تشغيل السكرول
-window.addEventListener('load', () => {
+//window.addEventListener('load', () => {
     loadNewsScroll();
     console.log('%c✅ السكرول التلقائي للأخبار تم إصلاحه نهائياً!', 'color:#F4A261; font-size:18px; font-weight:bold');
 });
@@ -255,7 +298,7 @@ window.addEventListener('load', () => {
         // JavaScript مشترك بسيط (انسخه
         // وظائف المودال
         function showLoginModal() {
-            document.getElementById('loginModal').style.display = 'flex';
+          document.getElementById('loginModal').style.display = 'flex';
         }
         function hideLoginModal() {
             document.getElementById('loginModal').style.display = 'none';
@@ -276,6 +319,32 @@ window.addEventListener('load', () => {
             loadNewsScroll();
             console.log('%c✅ موقع مبادرة بصمة دعم جاهز!', 'color:#F4A261; font-size:18px; font-weight:bold');
         });
+        
+        
+ط
     </script>
+
+<button onclick="scrollToTop()" id="scrollTopBtn" class="scroll-top-btn" title="صعود لأعلى">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+    // دالة الصعود لأعلى
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // إظهار الزرار عند التمرير
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('scrollTopBtn');
+        if (window.scrollY > 300) {        // يظهر بعد 300 بكسل
+            btn.style.display = 'flex';
+        } else {
+            btn.style.display = 'none';
+        }
+    });
+</script>
+
+
 </body>
 </html>
