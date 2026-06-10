@@ -1,0 +1,32 @@
+/* تنسيقات خاصة بصفحة سياسة الخصوصية */
+.privacy-section {
+    padding: 120px 0 80px;
+    background-color: #F8FAFC;
+}
+
+.privacy-container {
+    background: white;
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 102, 204, 0.08);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.privacy-container h2 {
+    color: #004488;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.privacy-container p {
+    color: #334155;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.privacy-btn {
+    margin-top: 30px;
+    display: inline-block;
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي للعضو | مبادرة بصمة دعم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #025cc2; /* نفس أزرق الهيدر في الصورة */
+            --accent-gold: #f4b644;  /* نفس لون زر الدخول */
+            --bg-light: #f4f7fa;     /* خلفية الصفحة المريحة */
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            background-image: radial-gradient(circle at top left, rgba(2, 92, 194, 0.05) 0%, transparent 40%);
+            color: var(--text-dark);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .profile-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* كارت الهيدر الرئيسي للمستخدم */
+        .profile-header-card {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-top: 8px solid var(--primary-blue);
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px;
+        }
+
+        .avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            box-shadow: 0 5px 15px rgba(2, 92, 194, 0.2);
+        }
+
+        .profile-header-card h1 {
+            font-size: 24px;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .profile-header-card .sub-title {
+            font-size: 16px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* شبكة عرض البيانات */
+        .info-section {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(2, 92, 194, 0.1);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            background: #fdfdfd;
+            border: 1px solid #f0f4f8;
+            padding: 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            border-color: rgba(2, 92, 194, 0.2);
+            background-color: rgba(2, 92, 194, 0.01);
+        }
+
+        .info-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .info-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* نمط مخصص للروابط مثل الواتساب */
+        .info-value a {
+            color: #25D366;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* نمط مخصص للنصوص الطويلة (الخبرات / المهارات) */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* تجميل التاجات (Tags) للمهارات والكورسات */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .tag {
+            background: rgba(2, 92, 194, 0.08);
+            color: var(--primary-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* زر العودة المتناسق مع زر الدخول الأصفر */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-gold);
+            color: var(--text-dark);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(244, 182, 68, 0.3);
+            margin-top: 10px;
+        }
+
+        .btn-back:hover {
+            background: #e0a334;
+            transform: translateY(-2px);
+        }
+
+        /* شاشة التحميل والرسائل */
+        .loading-view, .error-view {
+            text-align: center;
+            padding: 5px;
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+
+        .hidden { display: none !important; }
+    </style>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+    <div class="profile-container">
+        
+        <div id="loadingMessage" class="loading-view">
+            <i class="fas fa-spinner fa-spin fa-2x" style="color: var(--primary-blue); margin-bottom: 15px;"></i>
+            <p>جاري جلب بيانات العضو من قاعدة البيانات...</p>
+        </div>
+
+        <div id="profileContent" class="hidden">
+            
+            <div class="profile-header-card">
+                <div class="avatar-wrapper">
+                    <img id="userAvatar" src="img/avatar.jpg" alt="صورة العضو">
+                </div>
+                <h1 id="userNameAr">جاري التحميل...</h1>
+                <div class="sub-title" id="userNameEn">-</div>
+            </div>
+
+            <div class="info-section">
+                <div class="section-title">
+                    <i class="fas fa-user-card"></i> البيانات الشخصية والاتصال
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">الرقم القومي</span>
+                        <div class="info-value" id="userNationalId">-</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">المحافظة</span>
+                        <div class="info-value" id="userGovernorate">-</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">الجنسية</span>
+                        <div class="info-value" id="userNationality">-</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">رقم الواتساب</span>
+                        <div class="info-value" id="userWhatsapp">-</div>
+                    </div>
+                    <div class="info-item full-width">
+                        <span class="info-label">العنوان بالتفصيل</span>
+                        <div class="info-value" id="userAddress">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i> الموقف العملي والمهارات
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">الموقف من العمل</span>
+                        <div class="info-value" id="userStatusWork">-</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">تاريخ التسجيل بالمنظومة</span>
+                        <div class="info-value" id="userCreatedAt">-</div>
+                    </div>
+                    <div class="info-item full-width">
+                        <span class="info-label">الخبرات السابقة</span>
+                        <div class="info-value" id="userExperience">-</div>
+                    </div>
+                    <div class="info-item full-width">
+                        <span class="info-label">المهارات الفنية المحددة</span>
+                        <div class="tag-container" id="userSkills">
+                            </div>
+                    </div>
+                    <div class="info-item full-width">
+                        <span class="info-label">الكورسات والدورات المطلوبة</span>
+                        <div class="info-value" id="userCourses">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-arrow-right"></i> العودة للصفحة الرئيسية
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="user-profile.js"></script>
+</body>
+</html>

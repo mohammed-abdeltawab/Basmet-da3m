@@ -1,0 +1,114 @@
+/* ====================== structure.css - مبادرة بصمة دعم ====================== */
+.structure-hero {
+    background: linear-gradient(135deg, #0066CC, #004488);
+    color: white;
+    padding: 140px 20px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.structure-hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
+    animation: pulse 20s infinite ease-in-out;
+}
+.org-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+.org-btn {
+    font-family: 'Tajawal', sans-serif !important;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 25px 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A2A44;
+    box-shadow: 0 10px 30px rgba(0,102,204,0.1);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+    text-align: right;
+}
+.org-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(244,162,97,0.2);
+}
+.org-btn.active {
+    padding-bottom: 30px;
+    box-shadow: 0 25px 50px rgba(0,102,204,0.15);
+    border: 1px solid rgba(244,162,97,0.3);
+}
+.btn-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* تأثير تدوير السهم السلس */
+.btn-header i {
+    transition: transform 0.3s ease;
+    color: #0066CC;
+}
+.org-btn.active .btn-header i {
+    transform: rotate(180deg);
+    color: #F4A261;
+}
+.detail-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 0;
+    white-space: normal;
+}
+.org-btn.active .detail-content {
+    max-height: 1000px;
+    margin-top: 24px;
+    padding-top: 15px;
+    border-top: 1px dashed #E2E8F0;
+}
+.person {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #F1F5F9;
+    text-align: right;
+}
+.person:last-child { 
+    border-bottom: none; 
+    margin-bottom: 0; 
+    padding-bottom: 0;
+}
+.person h3 {
+    font-size: 18px;
+    color: #1A2A44;
+    margin-bottom: 4px;
+}
+.person p {
+    font-size: 14px;
+    color: #64748B;
+}
+.person img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #F4A261;
+    flex-shrink: 0;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}

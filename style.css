@@ -19,84 +19,335 @@ body {
 }
 
 /* ====================== Navbar ====================== */
+
+/* --- Base (Mobile First) --- */
 .navbar {
     background: linear-gradient(135deg, #004488, #0066CC);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+    height: 65px;
 }
 
 .navbar .container {
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 75px;
+    height: 65px;
 }
 
+/* الشعار */
 .logo {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 44px;
+    width: auto;
+}
+
+/* منطقة اليمين: avatar + hamburger */
+.nav-right {
+    display: flex;
+    align-items: center;
     gap: 12px;
-    color: white;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+/* زرار انضم الآن */
+a.highlight,
+#navLoginBtn {
+    background: linear-gradient(135deg, #F4A261, #f0c14b);
+    color: #004488;
+    padding: 8px 18px;
+    border-radius: 50px;
     text-decoration: none;
-}
-
-.logo h1 {
-    font-size: 28px;
     font-weight: 700;
-    letter-spacing: -1px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(244, 162, 97, 0.35);
+    white-space: nowrap;
 }
 
+a.highlight:hover,
+#navLoginBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(244, 162, 97, 0.5);
+}
+
+/* Avatar */
+.nav-avatar-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.5);
+    padding: 2px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.nav-avatar-wrapper:hover {
+    border-color: #F4A261;
+    transform: scale(1.05);
+}
+
+.nav-avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* زرار الهمبرجر - ظاهر دايمًا في الموبايل */
+.mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.mobile-toggle:hover {
+    background: rgba(255,255,255,0.22);
+}
+
+/* القائمة - مخفية في الموبايل */
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 28px;
+    flex-direction: column;
+    position: fixed;
+    top: 65px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 65px);
+    background: #003d7a;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 30px;
+    gap: 8px;
+    transition: right 0.35s ease;
+    overflow-y: auto;
 }
 
-.nav-menu a {
+.nav-menu.mobile-active {
+    right: 0;
+}
+
+.nav-menu > li > a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 17px;
-    transition: all 0.3s;
-    position: relative;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 10px;
+    transition: all 0.25s;
+    text-align: center;
+    min-width: 200px;
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
+.nav-menu > li > a:hover,
+.nav-menu > li > a.active {
+    color: #F4A261;
+    background: rgba(244, 162, 97, 0.1);
+}
+
+/* Dropdown - موبايل */
+.dropdown {
+    position: relative;
+/*    width: 100%; */
+    text-align: center;
+}
+
+.dropdown-content {
+    display: none;
+    list-style: none;
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    margin-top: 4px;
+    padding: 6px 0;
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a {
+    color: #dce8f5;
+    padding: 10px 16px;
+    display: block;
+    font-size: 16px;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
     color: #F4A261;
 }
 
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    right: 0;
-    width: 0;
-    height: 3px;
-    background: #F4A261;
-    transition: width 0.3s;
+.hidden { display: none !important; }
+
+/* --- Tablet: 576px+ --- */
+@media (min-width: 576px) {
+    .navbar {
+        height: 70px;
+    }
+    .navbar .container {
+        height: 70px;
+        padding: 0 24px;
+    }
+    .nav-menu {
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+    .logo img {
+        height: 50px;
+    }
 }
 
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
-    left: 0;
+/* --- Laptop: 992px+ --- */
+@media (min-width: 992px) {
+    .navbar {
+        height: 75px;
+    }
+    .navbar .container {
+        height: 75px;
+        padding: 0 32px;
+    }
+
+    /* إخفاء الهمبرجر */
+    .mobile-toggle {
+        display: none;
+    }
+
+    /* القائمة أفقية */
+    .nav-menu {
+        position: static;
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        gap: 4px;
+        overflow: visible;
+        right: auto;
+        justify-content: center;
+        flex: 1;
+        margin: 0 24px;
+    }
+
+    .nav-menu > li > a {
+        font-size: 15px;
+        padding: 8px 12px;
+        min-width: unset;
+        position: relative;
+    }
+
+    .nav-menu > li > a::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        right: 12px;
+        left: 12px;
+        height: 2px;
+        background: #F4A261;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-menu > li > a:hover::after,
+    .nav-menu > li > a.active::after {
+        transform: scaleX(1);
+    }
+
+    /* Dropdown - Desktop */
+    .dropdown-content {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        background: white;
+        min-width: 180px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        border-radius: 10px;
+        padding: 6px 0;
+        margin-left: 0;
+        margin-right: auto;
+        z-index: 100;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content li a {
+        color: #004488;
+        font-size: 15px;
+        padding: 10px 16px;
+    }
+
+    .dropdown-content li a:hover {
+        background: #f0f6ff;
+        color: #0066CC;
+    }
+
+    .nav-menu {
+        top: auto;
+    }
+
+    .logo img {
+        height: 54px;
+    }
 }
 
+/* --- Wide Desktop: 1200px+ --- */
+@media (min-width: 1200px) {
+    .navbar .container {
+        padding: 0 40px;
+    }
+    .nav-menu {
+        gap: 8px;
+        margin: 0 32px;
+    }
+    .nav-menu > li > a {
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+}
+
+/* زر الـ login القديم - للتوافق */
 .nav-actions .btn-login {
     background: rgba(255,255,255,0.15);
     color: white;
-    padding: 10px 24px;
+    padding: 10px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -109,13 +360,27 @@ body {
     transform: translateY(-2px);
 }
 
-.mobile-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
+.nav-auth-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-member-login-btn {
+    background-color: #f4b644;
+    color: #333;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(244, 182, 68, 0.2);
+}
+
+.nav-member-login-btn:hover {
+    background-color: #e0a334;
+    transform: translateY(-1px);
 }
 
 /* ====================== Hero ====================== */
@@ -126,7 +391,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    margin-top: 75px;
+    margin-top: 65px;
 }
 
 .hero-bg {
@@ -135,6 +400,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     z-index: -2;
     filter: brightness(0.75);
@@ -326,16 +592,42 @@ body {
     border-radius: 4px;
 }
 
+/* الحاوية الخارجية للشريط */
 .scroll-container {
     overflow: hidden;
     white-space: nowrap;
+    padding: 20px 0; /* مساحة علوية وسفلية عشان الـ Hover والـ Shadow يظهروا براحتهم */
+    direction: ltr;  /* لتسهيل حركة الانيميشن من اليسار لليمين */
 }
 
+/* الخط الحاضن للكروت */
 .scroll-track {
     display: inline-flex;
-    gap: 24px;
-    animation: scrollInfinite 40s linear infinite;
+    gap: 30px; /* المسافة بين كل كارت والتاني */
+    will-change: transform;
 }
+
+/* ضبط كارت الخبر جوه السلايدر */
+.scroll-track .news-item.news-card {
+    width: 320px;        /* تحديد عرض ثابت ومناسب للكارت جوه التراك */
+    flex-shrink: 0;      /* منع المتصفح من كبس أو تصغير حجم الكارت */
+    white-space: normal; /* السماح لعنوان الخبر بالنزول لسطر جديد لو طويل */
+    text-align: right;   /* إعادة اتجاه النص للغة العربية */
+}
+
+/* تعديل حجم الخط وصورة الكارت في الشريط الرئيسي (اختياري لجعلها أرق) */
+.scroll-track .news-item.news-card img {
+    height: 180px; /* جعل الصورة أقصر قليلاً لتناسب شريط الصفحة الرئيسية */
+}
+
+.scroll-track .news-item.news-card h3 {
+    font-size: 18px; /* حجم خط متناسق مع حجم الكارت في الشريط */
+    display: -webkit-box;
+    line-clamp: 2; /* لو العنوان طويل جداً يكتفي بسطرين ويضع ... */
+    box-orient: vertical;
+    overflow: hidden;
+}
+
 
 .news-item {
     background: white;
@@ -403,12 +695,13 @@ body {
     justify-content: space-between;
     box-shadow: 0 8px 20px rgba(0,0,0,0.07);
     transition: all 0.4s;
+    transform: translateY(-10px)
 }
 
 .quick-card:hover {
     background: #0066CC;
     color: white;
-    transform: translateY(-8px);
+    transform: translateY(-18px);
 }
 
 /* ====================== Footer ====================== */
@@ -416,6 +709,8 @@ body {
     background: #1A2A44;
     color: white;
     padding: 80px 0 30px;
+    margin-top: 40px;
+
 }
 
 .footer-grid {
@@ -475,31 +770,78 @@ body {
     box-shadow: 0 15px 40px rgba(0,102,204,0.12);
 }
 
+/* تنسيق الـ Labels - جعلناها تتماشى مع العناصر */
 .join-form label {
     display: block;
     margin: 22px 0 8px;
     font-weight: 600;
     color: #1A2A44;
     font-size: 17px;
+    /* الـ border-radius لا يؤثر هنا إلا إذا أضفت خلفية للـ label مستقبلاً */
 }
 
+/* تنسيق العناصر (input, select, textarea) */
 .join-form input,
 .join-form select,
 .join-form textarea {
     width: 100%;
     padding: 16px 20px;
     border: 2px solid #E2E8F0;
-    border-radius: 12px;
     font-size: 17px;
-    transition: all 0.3s;
+    transition: all 0.3s ease; /* إضافة ease لجعل الحركة أنعم */
+    
+    /* الكيرف الموحد */
+    border-radius: 16px; 
+    resize: none; /* لمنع تغيير حجم textarea */
 }
 
-.join-form input:focus,
-.join-form select:focus,
-.join-form textarea:focus {
+
+/* تأثير الهوفر (عند مرور الماوس على الحقل) */
+.join-form input:hover,
+.join-form select:hover,
+.join-form textarea:hover {
     border-color: #0066CC;
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(0,102,204,0.15);
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1); /* توهج أزرق خفيف جداً */
+    transition: all 0.3s ease; /* عشان اللون يظهر بنعومة */
+    color: #004488 !important; /* هيخلي الكلام المكتوب لونه أزرق المبادرة */
+    caret-color: #0066CC !important; /* لون المؤشر (الكرسر) */
+}
+
+textarea {
+    resize: none !important; /* لمنع السحب */
+    appearance: none !important; /* لإلغاء أي تنسيق افتراضي للمتصفح */
+}
+
+.checkbox-group {
+    gap: 15px; /* مسافة بين العناصر */
+    margin: 20px 0;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    padding: 12px 15px;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    color: #1A2A44;
+}
+
+.checkbox-group label:hover {
+    border-color: #0066CC;
+    background-color: #F8FAFC;
+}
+
+/* تنسيق الـ input نفسه */
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0066CC; /* لون التحديد */
+    cursor: pointer;
 }
 
 .radio-group {
@@ -533,31 +875,8 @@ body {
     animation: fadeInUp 0.8s backwards;
 }
 
-/* ====================== Responsive ====================== */
+/* ====================== Responsive (non-navbar) ====================== */
 @media (max-width: 992px) {
-    .nav-menu {
-        position: fixed;
-        top: 75px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 75px);
-        background: #004488;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 40px;
-        gap: 30px;
-        transition: 0.4s;
-    }
-    
-    .nav-menu.mobile-active {
-        left: 0;
-    }
-    
-    .mobile-toggle {
-        display: block;
-    }
-    
     .hero-stats {
         gap: 20px;
     }
@@ -567,13 +886,23 @@ body {
     .hero-text h1 {
         font-size: 48px;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
     }
-    
+
     .sections-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* تحسين تجاوب الـ checkbox-group على الموبايل */
+@media (max-width: 600px) {
+    .checkbox-group {
+        grid-template-columns: 1fr !important; /* يجعل العناصر تحت بعضها في الشاشات الصغيرة */
+    }
+    .join-form {
+        padding: 30px; /* تقليل الحواف في الموبايل */
     }
 }
 
@@ -619,103 +948,7 @@ body {
     border-radius: 12px;
 }
 
-/* ====================== Infinite News Scroll - Fixed Version ====================== */.news-scroll {
-    padding: 80px 0;
-    background: #fff;
-    overflow: hidden;
-}
-
-.scroll-container {
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.scroll-track {
-    display: inline-flex;
-    gap: 24px;
-}
-
-.news-item {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    width: 320px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    display: inline-flex;
-    flex-direction: column;
-}
-
-.news-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.news-item div {
-    padding: 16px;
-}
-
-.news-item h4 {
-    font-size: 18px;
-    margin-bottom: 6px;
-    color: #1A2A44;
-}
-
-.news-item span {
-    color: #64748B;
-    font-size: 14px;
-}
-
-
-.news-scroll {
-    padding: 80px 0;
-    background: #fff;
-    overflow: hidden;
-}
-
-.scroll-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 15px;
-}
-
-.scroll-track {
-    display: flex;
-    gap: 24px;
-    padding: 0 20px;
-}
-
-.news-item {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    width: 320px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    flex-shrink: 0;
-}
-
-.news-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.news-item div {
-    padding: 16px;
-}
-
-.news-item h4 {
-    font-size: 18px;
-    margin-bottom: 6px;
-    color: #1A2A44;
-}
-
-.news-item span {
-    color: #64748B;
-    font-size: 14px;
-}
-
-/* زرار الصعود لأعلى */
+/* ====================== scroll-top button ====================== */
 .scroll-top-btn {
     position: fixed;
     bottom: 30px;
@@ -735,7 +968,6 @@ body {
     z-index: 9999;
     transition: all 0.3s;
 }
-
 .scroll-top-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 12px 30px rgba(244, 162, 97, 0.5);

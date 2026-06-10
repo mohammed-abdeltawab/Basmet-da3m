@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="أهم أخبار مبادرة بصمة دعم">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سفراء مبادرة بصمة دعم في كل محافظة">
     <!-- Open Graph -->
 <meta property="og:type"        content="website">
 <meta property="og:site_name"   content="مبادرة بصمة دعم">
 <meta property="og:locale"      content="ar_EG">
-<meta property="og:url"         content="https://basmet-da3m.netlify.app/news.html">
-<meta property="og:title"       content="أهم الأخبار | بصمة دعم">
-<meta property="og:description" content="تابع آخر أخبار وفعاليات مبادرة بصمة دعم من برامج تدريبية وشراكات استراتيجية.">
+<meta property="og:url"         content="https://basmet-da3m.netlify.app/ambassadors.html">
+<meta property="og:title"       content="سفراء بصمة دعم | بصمة دعم">
+<meta property="og:description" content="تعرف على سفراء مبادرة بصمة دعم في كل محافظة — شباب وشابات بيتركوا بصمة حقيقية.">
 <meta property="og:image"       content="https://basmet-da3m.netlify.app/img/og-cover.jpg">
 <meta property="og:image:width"  content="1200">
 <meta property="og:image:height" content="630">
 <!-- Twitter Card -->
 <meta name="twitter:card"        content="summary_large_image">
-<meta name="twitter:title"       content="أهم الأخبار | بصمة دعم">
-<meta name="twitter:description" content="تابع آخر أخبار وفعاليات مبادرة بصمة دعم.">
+<meta name="twitter:title"       content="سفراء بصمة دعم">
+<meta name="twitter:description" content="تعرف على سفراء مبادرة بصمة دعم في كل محافظة.">
 <meta name="twitter:image"       content="https://basmet-da3m.netlify.app/img/og-cover.jpg">
 <!-- Canonical -->
-<link rel="canonical" href="https://basmet-da3m.netlify.app/news.html">
-    <title>أهم الأخبار | بصمة دعم</title>
+<link rel="canonical" href="https://basmet-da3m.netlify.app/ambassadors.html">
+    <title>سفراء بصمة دعم | بصمة دعم</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="partners.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -75,26 +74,13 @@
         </div>
     </nav>
 
-    <section class="news-hero">
+    <section class="amb-hero">
         <div class="container">
-            <h1>أهم <span class="accent">الأخبار</span></h1>
-            <p>كل ما يحدث في مبادرة بصمة دعم.. تابع معنا لحظة بلحظة</p>
+            <h1>سفراء بصمة دعم</h1>
+            <p>شباب وشابات بيتركوا بصمة حقيقية في كل محافظة</p>
         </div>
     </section>
-    <div class="news-section">
-        <div class="filter-bar">
-            <input type="text" id="searchInput" placeholder=" ابحث عن خبر..." onkeyup="filterNews()">
-            <select id="categoryFilter" onchange="filterNews()" style="padding:14px 24px;border-radius:50px;border:2px solid #E2E8F0;font-size:17px;">
-                <option value="">جميع الأخبار</option>
-                <option value="فعاليات">فعاليات</option>
-                <option value="شراكات">شراكات</option>
-                <option value="تدريب">تدريب وتطوير</option>
-                <option value="مجتمع">مبادرات مجتمعية</option>
-            </select>
-        </div>
-        <div class="news-grid" id="newsGrid"></div>
-        <div id="noResults" class="no-results">للأسف.. لم نجد أي خبر يطابق بحثك</div>
-    </div>
+    <div id="ambGrid" class="amb-grid container"></div>
 <footer class="footer"><div class="container"><div class="footer-grid">
     <div><div class="logo-footer"><img src="img/logo.svg" width="160" height="60" alt="بصمة دعم"></div><p>نترك بصمة في كل شاب وشابة</p></div>
     <div><h4>روابط سريعة</h4><ul><li><a href="about.html">عن المبادرة</a></li><li><a href="join.html">انضم الآن</a></li><li><a href="news.html">الأخبار</a></li><li><a href="courses.html">الكورسات</a></li></ul></div>
@@ -105,7 +91,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"  defer></script>
     <script src="supabase-config.js" defer></script>
     <script src="shared.js" defer></script>
-    <script src="news.js" defer></script>
+    <script src="ambassadors.js" defer></script>
     <script src="navbar-auth.js" defer></script>
 </body>
 </html>

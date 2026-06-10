@@ -1,0 +1,154 @@
+/* ====================== COUNTER ====================== */
+.counter {
+    font-size: clamp(42px, 8vw, 62px);
+    font-weight: 700;
+    color: #F4A261;
+    line-height: 1;
+}
+
+/* ====================== HERO SECTION ====================== */
+.ach-hero {
+    background: linear-gradient(135deg, #0066CC, #004488);
+    color: white;
+    padding: 140px 20px 90px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ach-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
+    animation: pulse 20s infinite ease-in-out;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ach-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: scale(1.1); 
+        opacity: 1; 
+    }
+}
+
+/* ====================== STATS GRID ====================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,102,204,0.12);
+    transition: all 0.4s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-12px);
+}
+
+/* ====================== ACHIEVEMENTS LIST ====================== */
+/* ====================== تحديث هيكل الإنجازات ====================== */
+
+/* تنسيق الكارت ليكون مطابق للسفراء */
+.ach-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #edf2f7;
+    margin-bottom: 20px;
+}
+
+/* الجزء الملون العلوي */
+.ach-header {
+    background: #f4a261; /* نفس لون رأس كارت السفراء */
+    padding: 20px;
+    text-align: center;
+}
+
+.ach-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+/* جسم الكارت */
+.ach-body {
+    padding: 25px;
+    text-align: center;
+}
+
+.ach-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #f4a261;
+}
+
+.location-text {
+    color: #0066cc;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.bio-text {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 380px));
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ====================== RESPONSIVE ====================== */
+@media (max-width: 768px) {
+    .ach-hero {
+        padding: 100px 20px 70px;
+    }
+    
+    .ach-list {
+        padding: 60px 15px;
+        gap: 20px;
+    }
+    
+    .ach-card {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ach-card {
+        max-width: 480px;
+    }
+}

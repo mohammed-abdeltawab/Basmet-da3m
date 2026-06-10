@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+        <loc>https://basmet-da3m.netlify.app/</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.00</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/join.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/news.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/courses.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/ambassadors.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/achievements.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/about.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/partners.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/structure.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/rules.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.40</priority>
+    </url>
+
+    <url>
+        <loc>https://basmet-da3m.netlify.app/privacy_polices.html</loc>
+        <lastmod>2026-06-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+
+</urlset>

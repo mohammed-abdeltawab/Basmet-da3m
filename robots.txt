@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# منع أرشفة صفحات تسجيل دخول الأعضاء والملفات الشخصية
+Disallow: /member-login.html
+Disallow: /user-profile.html
+
+# رابط خريطة الموقع المباشر لتسهيل الزحف
+Sitemap: https://basmet-da3m.netlify.app/sitemap.xml

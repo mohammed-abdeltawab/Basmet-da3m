@@ -1,0 +1,67 @@
+/* ====================== rules.css - مبادرة بصمة دعم ====================== */
+.rules-hero {
+            background: linear-gradient(135deg, #0066CC, #004488);
+            color: white;
+            padding: 140px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .rules-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -40%;
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
+            animation: pulse 20s infinite ease-in-out;
+        }
+        .rules-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .rules-box {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(0,102,204,0.12);
+            padding: 50px 40px;
+            font-size: 18.5px;
+            line-height: 1.9;
+        }
+        .rules-box ol {
+            counter-reset: rule-counter;
+        }
+        .rules-box li {
+            counter-increment: rule-counter;
+            margin-bottom: 28px;
+            padding-right: 40px;
+            position: relative;
+        }
+        .rules-box li::before {
+            content: counter(rule-counter);
+            position: absolute;
+            right: 0;
+            background: #F4A261;
+            color: #004488;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 19px;
+        }
+        .last-update {
+            text-align: center;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: #F4A261;
+            color: #004488;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 17px;
+        }

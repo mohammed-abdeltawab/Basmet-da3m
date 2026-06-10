@@ -3,147 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="الهيكل التنظيمي لمبادرة بصمة دعم">
+    <meta property="og:type"        content="website">
+    <meta property="og:site_name"   content="مبادرة بصمة دعم">
+    <meta property="og:locale"      content="ar_EG">
+    <meta property="og:url"         content="https://basmet-da3m.netlify.app/structure.html">
+    <meta property="og:title"       content="الهيكل التنظيمي — مبادرة بصمة دعم">
+    <meta property="og:description" content="مبادرة شبابية مصرية غير ربحية لتمكين الشباب وتطوير مهاراتهم. انضم لأكثر من ١٢٤٥ متطوع في ١٧ محافظة.">
+    <meta property="og:image"       content="https://basmet-da3m.netlify.app/img/og-cover.jpg">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="الهيكل التنظيمي — مبادرة بصمة دعم">
+    <meta name="twitter:description" content="مبادرة شبابية مصرية غير ربحية لتمكين الشباب وتطوير مهاراتهم.">
+    <meta name="twitter:image"       content="https://basmet-da3m.netlify.app/img/og-cover.jpg">
+    <link rel="canonical" href="https://basmet-da3m.netlify.app/structure.html">
     <title>الهيكل التنظيمي | بصمة دعم</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="structure.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .structure-hero {
-            background: linear-gradient(135deg, #0066CC, #004488);
-            color: white;
-            padding: 140px 20px 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .structure-hero::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            left: -40%;
-            width: 180%;
-            height: 180%;
-            background: radial-gradient(circle, rgba(244,162,97,0.35) 0%, transparent 70%);
-            animation: pulse 20s infinite ease-in-out;
-        }
-        .org-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1300px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-        .org-btn {
-            font-family: 'Tajawal', sans-serif !important;
-            background: white;
-            border: none;
-            border-radius: 20px;
-            padding: 25px 30px;
-            font-size: 21px;
-            font-weight: 700;
-            color: #1A2A44;
-            box-shadow: 0 10px 30px rgba(0,102,204,0.15);
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            position: relative;
-        }
-        .org-btn:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(244,162,97,0.3);
-        }
-        .org-btn.active {
-            padding-bottom: 30px;
-            box-shadow: 0 25px 50px rgba(244,162,97,0.4);
-        }
-        .btn-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .detail-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-            margin-top: 20px;
-        }
-        .org-btn.active .detail-content {
-            max-height: 800px;
-        }
-        .person {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            margin-bottom: 18px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #eee;
-        }
-        .person:last-child { border-bottom: none; margin-bottom: 0; }
-        .person img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #F4A261;
-        }
-    </style>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
-                    <circle cx="50" cy="50" r="12" fill="#0066CC"/>
-                </svg>
-                <h1>بصمة دعم</h1>
+                <a href="index.html">
+                    <img src="img/logo.svg" width="350" height="80" alt="بصمة دعم">
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about.html">عن المبادرة</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)">تعرف علينا ▾</a>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">عن المبادرة</a></li>
+                        <li><a href="structure.html">الهيكل التنظيمي</a></li>
+                        <li><a href="rules.html">اللائحة الداخلية</a></li>
+                    </ul>
+                </li>
                 <li><a href="news.html">أهم الأخبار</a></li>
-                <li><a href="structure.html" class="active">الهيكل التنظيمي</a></li>
-                <li><a href="rules.html">اللائحة الداخلية</a></li>
-                <li><a href="join.html">انضم الآن</a></li>
                 <li><a href="achievements.html">الإنجازات</a></li>
-                <li><a href="partners.html">شركاء النجاح</a></li>
-                <li><a href="ambassadors.html">سفراء بصمة دعم</a></li>
-                <li><a href="courses.html">الدورات والفعاليات</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)">المجتمع ▾</a>
+                    <ul class="dropdown-content">
+                        <li><a href="partners.html">شركاء النجاح</a></li>
+                        <li><a href="ambassadors.html">سفراء بصمة دعم</a></li>
+                    </ul>
+                </li>
+                <li><a href="courses.html">الكورسات</a></li>
             </ul>
-            <div class="nav-actions">
-                <a href="#" onclick="showLoginModal()" class="btn-login"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</a>
+           
+            <div class="nav-right">
+                <a href="member-login.html" id="navLoginBtn" class="highlight">انضم الآن</a>
+                <div id="navUserAvatarContainer" class="nav-avatar-wrapper hidden">
+                    <img id="navUserAvatar" src="img/avatar.jpg" alt="ملفي الشخصي" title="الانتقال لملفي الشخصي">
+                </div>
+                <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="فتح القائمة">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <button class="mobile-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="structure-hero">
         <div class="container">
             <h1>الهيكل التنظيمي</h1>
-            <p>اضغط على أي قسم لترى التفاصيل داخل الزر</p>
+            <p>اضغط على أي قسم لترى تفاصيل الكوادر الإدارية</p>
         </div>
     </section>
 
     <div class="container">
-        <div class="org-buttons" id="orgButtons"></div>
+        <div class="org-buttons" id="orgButtons">
+            </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="logo-footer">
-                        <svg width="35" height="35" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 10 Q30 30 30 50 Q30 70 50 90 Q70 70 70 50 Q70 30 50 10" stroke="#F4A261" stroke-width="15" stroke-linejoin="round"/>
-                            <circle cx="50" cy="50" r="12" fill="#0066CC"/>
-                        </svg>
-                        <h3>بصمة دعم</h3>
-                    </div>
+                    <div class="logo-footer"><img src="img/logo.svg" width="160" height="60" alt="بصمة دعم"></div>
                     <p>نترك بصمة في كل شاب وشابة</p>
                 </div>
                 <div>
@@ -152,6 +93,7 @@
                         <li><a href="about.html">عن المبادرة</a></li>
                         <li><a href="join.html">انضم الآن</a></li>
                         <li><a href="news.html">الأخبار</a></li>
+                        <li><a href="courses.html">الكورسات</a></li>
                     </ul>
                 </div>
                 <div>
@@ -176,62 +118,10 @@
         </div>
     </footer>
 
-    <script>
-        const sections = [
-            { title: "رئاسة بصمة دعم", content: `<div class="person"><img src="https://picsum.photos/id/64/300/300" alt=""><div><h3>م/ عبد الرحمن أحمد فتحي</h3><p style="color:#F4A261; font-weight:700;">رئيس بصمة دعم</p></div></div>` },
-            { title: "المكتب الاستشاري", content: `
-                <div class="person"><img src="https://picsum.photos/id/1005/300/300" alt=""><div><h3>د. محمود أسامة</h3><p>مستشار إداري</p></div></div>
-                <div class="person"><img src="https://picsum.photos/id/201/300/300" alt=""><div><h3>أحمد ضياء</h3><p>مستشار قانوني</p></div></div>
-                <div class="person"><img src="https://picsum.photos/id/237/300/300" alt=""><div><h3>نورهان محمد</h3><p>مستشار إعلامي</p></div></div>
-                <div class="person"><img src="https://picsum.photos/id/180/300/300" alt=""><div><h3>أسماء محمد</h3><p>مستشار التدريب</p></div></div>
-                <div class="person"><img src="https://picsum.photos/id/251/300/300" alt=""><div><h3>عبدالله الأزهري</h3><p>مستشار القيم والتوجيه</p></div></div>` },
-            { title: "المركز الإعلامي والدعم الفني", content: `
-                <div class="person"><img src="https://picsum.photos/id/312/300/300" alt=""><div><h3>معتز نور</h3><p>صانع المحتوى المصور</p></div></div>
-                <div class="person"><img src="https://picsum.photos/id/29/300/300" alt=""><div><h3>محمد عبدالتواب</h3><p>مدير المواقع</p></div></div>
-                <div class="person"><h3>فريق G.M.A</h3><p>إدارة الميديا ودعم المعلومات</p></div>` },
-            { title: "قطاع العلاقات العامة", content: `
-                <div class="person"><img src="https://picsum.photos/id/870/300/300" alt=""><div><h3>دنيا فرج</h3><p>رئيس القطاع</p></div></div>
-                <div class="person"><img src="https://picsum.photos/id/1015/300/300" alt=""><div><h3>هنا محمود</h3><p>نائب رئيس القطاع</p></div></div>` },
-            { title: "قطاع التنظيم والمراسم", content: `<div class="person"><img src="https://picsum.photos/id/64/300/300" alt=""><div><h3>محمود إبراهيم</h3><p>رئيس القطاع</p></div></div>` },
-            { title: "قطاع الموارد البشرية", content: `<div class="person"><img src="https://picsum.photos/id/1005/300/300" alt=""><div><h3>شهد غريب</h3><p>رئيس القطاع</p></div></div>` },
-            { title: "الإدارات الفرعية للمحافظات", content: `
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
-                    <div><strong>١- محافظة الشرقية</strong><br><img src="https://picsum.photos/id/201/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
-                    <div><strong>٢- محافظة الجيزة</strong><br><img src="https://picsum.photos/id/237/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
-                    <div><strong>٣- محافظة القاهرة</strong><br><img src="https://picsum.photos/id/180/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
-                    <div><strong>٤- محافظة الأقصر</strong><br><img src="https://picsum.photos/id/251/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
-                    <div><strong>٥- محافظة البحر الأحمر</strong><br><img src="https://picsum.photos/id/29/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
-                    <div><strong>٦- محافظة البحيرة</strong><br><img src="https://picsum.photos/id/312/600/300" style="width:100%;border-radius:16px;margin-top:10px;"></div>
-                </div>` }
-        ];
-
-        function renderButtons() {
-            const container = document.getElementById('orgButtons');
-            container.innerHTML = '';
-            sections.forEach((section, index) => {
-                const btn = document.createElement('button');
-                btn.className = 'org-btn';
-                btn.innerHTML = `
-                    <div class="btn-header">
-                        <span>${section.title}</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="detail-content">${section.content}</div>
-                `;
-                btn.onclick = () => toggleButton(btn);
-                container.appendChild(btn);
-            });
-        }
-
-        function toggleButton(clickedBtn) {
-            const allBtns = document.querySelectorAll('.org-btn');
-            allBtns.forEach(b => {
-                if (b !== clickedBtn) b.classList.remove('active');
-            });
-            clickedBtn.classList.toggle('active');
-        }
-
-        window.addEventListener('load', renderButtons);
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="supabase-config.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="structure.js" defer></script>
+    <script src="navbar-auth.js" defer></script>
 </body>
 </html>
